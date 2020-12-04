@@ -209,6 +209,7 @@ Now, in **/resources/views** folder create folder **nodes** and these files in i
       
 @endsection
 ```
-
-
-
+Now you can start the project:
+```
+php artisan serve
+```
