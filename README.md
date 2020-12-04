@@ -26,4 +26,12 @@ Replace above all 6 lines with below 1 line - i.e Change the db_connection’s v
 DB_CONNECTION=sqlite
 ```
 
-Now in your database directory, create a file – *database.sqlite*
+Now in your database directory, create a file – **database.sqlite**
+
+Now create a migration file:
+
+```
+php artisan make:migration create_nodes_table --create=nodes
+```
+You will find your newly created migration in **/database/migrations** folder
+
