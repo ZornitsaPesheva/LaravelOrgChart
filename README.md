@@ -61,6 +61,11 @@ php artisan serve
 laravel new chart
 ```
 
+cd into your project:
+```
+cd chart
+```
+
 Laravel comes with default .env file at root.
 In the file you will find code like below:
 
