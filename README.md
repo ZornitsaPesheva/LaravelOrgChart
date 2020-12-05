@@ -170,7 +170,7 @@ Now, in **/resources/views** folder create folder **nodes** and these files in i
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel 8 CRUD Application - ItSolutionStuff.com</title>
+    <title>OrgChart JS with Laravel/title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
     <script src="https://balkangraph.com/js/latest/OrgChart.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -208,16 +208,6 @@ Now, in **/resources/views** folder create folder **nodes** and these files in i
 @extends('nodes.layout')
  
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Laravel 8 CRUD Example from scratch - ItSolutionStuff.com</h2>
-            </div>
-            <!-- <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('nodes.create') }}"> Create New Node</a>
-            </div> -->
-        </div>
-    </div>
    
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
