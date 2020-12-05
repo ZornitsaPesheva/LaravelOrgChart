@@ -2,7 +2,55 @@
 OrgChart JS with Lavarel
 </p>
 
-## Create plroject:
+## Download and run the project:
+Clone the progect:
+```
+git clone https://github.com/ZornitsaSerbezova/LaravelOrgChart.git
+```
+
+Install Composer Dependencies:
+```
+composer install
+```
+
+Create a copy of your .env file:
+```
+cp .env.example .env
+```
+
+Generate an app encryption key:
+```
+php artisan key:generate
+```
+
+Edit **.env** replacing these rows:
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+```
+with this one:
+```
+DB_CONNECTION=sqlite
+```
+
+In **database** folder reate an empty database file **database.sqlite** for our application.
+
+Start the migtation:
+```
+php artisan migrate
+```
+
+Run the project:
+```
+php artisan serve
+```
+
+
+## Create plroject tutorial:
 
 ```
 laravel new chart
