@@ -28,7 +28,7 @@ Generate an app encryption key:
 php artisan key:generate
 ```
 
-Edit **.env** replacing these rows:
+Edit the **.env** file replacing these rows:
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -42,9 +42,9 @@ with this one:
 DB_CONNECTION=sqlite
 ```
 
-In **database** folder reate an empty database file **database.sqlite** for our application.
+In **database** folder create an empty database file **database.sqlite** for our application.
 
-Start the migtation:
+Do the migtation:
 ```
 php artisan migrate
 ```
