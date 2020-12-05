@@ -1,4 +1,4 @@
-<p align="center">
+<p align="center" style="color: red">
 OrgChart JS with Lavarel
 </p>
 
