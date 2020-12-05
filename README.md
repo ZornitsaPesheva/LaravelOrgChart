@@ -116,7 +116,7 @@ php artisan make:controller NodeController --resource --model=Node
 ```
 press enter on the question 
 
-Edit **app/Http/Controllers/NodeController.php** as follows:
+Replace the content of **app/Http/Controllers/NodeController.php**  with the following:
 ```
 <?php
 
