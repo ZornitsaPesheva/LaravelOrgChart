@@ -66,7 +66,7 @@ cd into your project:
 cd chart
 ```
 
-Laravel comes with default .env file at root.
+Laravel comes with default **.env** file at root.
 In the file you will find code like below:
 
 ```
