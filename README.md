@@ -8,6 +8,11 @@ Clone the progect:
 git clone https://github.com/ZornitsaSerbezova/LaravelOrgChart.git
 ```
 
+cd into your project:
+```
+cd LaravelOrgChart
+```
+
 Install Composer Dependencies:
 ```
 composer install
