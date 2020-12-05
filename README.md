@@ -174,9 +174,7 @@ Now, in **/resources/views** folder create folder **nodes** and these files in i
         var chart = new OrgChart(document.getElementById("tree"), {
             enableDragDrop: true,
             nodeMenu: {
-                edit: { text: "Edit" },
-                add: { text: "Add" },
-                remove: { text: "Remove" }
+                add: { text: "Add" }
             },
             nodeBinding: {
                 field_0: "id"
