@@ -15,7 +15,8 @@
         var chart = new OrgChart(document.getElementById("tree"), {
             enableDragDrop: true,
             nodeMenu: {
-                add: { text: "Add" }
+                add: { text: "Add" },
+                remove: { text: "Remove" }
             },
             nodeBinding: {
                 field_0: "id"
@@ -40,6 +41,28 @@
                 }
             });
             return false;
+        });
+
+        chart.on('remove', function (sender, nodeId) {
+
+            var url = "{{URL('nodes')}}";
+            var dltUrl = url+"/"+nodeId;
+
+            $.ajax({
+                url: dltUrl,
+                type: "DELETE",
+                cache: false,
+                data:{
+                    _token:'{{ csrf_token() }}'
+                },
+                success: function(dataResult){
+                    var dataResult = JSON.parse(dataResult);
+                    if(dataResult.statusCode==200){
+                        $ele.fadeOut().remove();
+                    }
+                }
+            });
+
         });
    
         var app = @json($nodes);

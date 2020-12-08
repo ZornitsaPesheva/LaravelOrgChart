@@ -109,6 +109,7 @@ Now, let’s edit **routes/web.php**. Add these lines:
 ```
 use App\Http\Controllers\NodeController;
 Route::resource('nodes', NodeController::class);
+Route::delete('/nodes/{id}', [NodeController::class, 'deleteNode']);
 ```
 Add controller and model:
 ```
@@ -148,6 +149,14 @@ class NodeController extends Controller
 
         return redirect()->route('nodes.index')
                         ->with('success','Node created successfully.');
+    }
+
+    public function destroy($id) {
+
+        Node::find($id)->delete();
+        
+        return json_encode(array('statusCode'=>200));
+       
     }
 
 }
@@ -222,7 +231,8 @@ Now, in **/resources/views** folder create folder **nodes** and these files in i
         var chart = new OrgChart(document.getElementById("tree"), {
             enableDragDrop: true,
             nodeMenu: {
-                add: { text: "Add" }
+                add: { text: "Add" },
+                remove: { text: "Remove" }
             },
             nodeBinding: {
                 field_0: "id"
@@ -249,6 +259,28 @@ Now, in **/resources/views** folder create folder **nodes** and these files in i
             return false;
         });
    
+        chart.on('remove', function (sender, nodeId) {
+
+                var url = "{{URL('nodes')}}";
+                var dltUrl = url+"/"+nodeId;
+
+                $.ajax({
+                    url: dltUrl,
+                    type: "DELETE",
+                    cache: false,
+                    data:{
+                        _token:'{{ csrf_token() }}'
+                    },
+                    success: function(dataResult){
+                        var dataResult = JSON.parse(dataResult);
+                        if(dataResult.statusCode==200){
+                            $ele.fadeOut().remove();
+                        }
+                    }
+                });
+
+        });
+
         var app = @json($nodes);
         chart.load(app);
     </script>

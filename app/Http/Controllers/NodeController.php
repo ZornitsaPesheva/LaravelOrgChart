@@ -30,4 +30,13 @@ class NodeController extends Controller
                         ->with('success','Node created successfully.');
     }
 
+    public function destroy($id) {
+
+        Node::find($id)->delete();
+        
+        return json_encode(array('statusCode'=>200));
+       
+    }
+
+
 }
