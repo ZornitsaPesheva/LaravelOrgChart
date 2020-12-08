@@ -296,3 +296,9 @@ Now you can start the project:
 ```
 php artisan serve
 ```
+
+Open this link:
+```
+http://127.0.0.1:8000/nodes
+```
+and click on "It's lonley here..." to create your firts node.
